@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+
+<sailpoint>
+
+
+  <SPRight name="ViewTodoIcon" displayName="View Todo Plugin Icon">
+    <Description>Allows a user to view flagged users in the Todo Plugin</Description>
+  </SPRight>
+
+  <SPRight name="ViewFlaggedUsers" displayName="View Flagged Users">
+    <Description>Allows a user to view flagged users in the Todo Plugin</Description>
+  </SPRight>
+
+  <Capability name="FlaggedUserAdmin" displayName="Flagged User Admin">
+    <Description>The flagged user administrator in the Todo Plugin</Description>
+    <RightRefs>
+      <Reference class="sailpoint.object.SPRight" name="ViewFlaggedUsers"/>
+      <Reference class="sailpoint.object.SPRight" name="ViewTodoIcon"/>
+    </RightRefs>
+  </Capability>
+
+</sailpoint>
+

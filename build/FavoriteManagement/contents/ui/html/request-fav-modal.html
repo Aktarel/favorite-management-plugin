@@ -1,0 +1,62 @@
+<div id="infoModal" role="dialog" aria-labelledby="modalTitle"
+	class="info-modal">
+	<div class="modal-header">
+		<h4 class="modal-title" id="modalTitle">Request favorite</h4>
+	</div>
+	<div class="modal-body">
+		<div id="modal-content">
+			<div class="panel panel-default">
+
+				<div class="panel-heading">Summary</div>
+				<div class="panel-body">
+					<div class="form-group">
+						<label for="delegatee">Filter Name</label>
+						<input type="text"  class="form-control" value="SSSC Business Analyst" disabled />
+					</div>
+					
+					<div class="form-group">
+						<label for="filterOwner">Filter Owner</label>
+						<input type="text"  class="form-control" value="Nicolas LEBEC" disabled />
+					</div>
+					
+				
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">Target Beneficiary</div>
+				<div class="panel-body">
+						<div class="form-group">
+							<label for="requestee">User UID</label> <input id="requestee" type="text"
+								ng-model="selected" typeahead-min-length="2"
+								typeahead-editable="false"
+								typeahead-input-formatter="ctrl.formatLabel($model)"
+								uib-typeahead="identity.name as identity.displayName  for identity in ctrl.getIdentities($viewValue)"
+								placeholder="Type 2 character to start search your delegatee"
+								typeahead-loading="ctrl.loadingIdentities"
+								typeahead-no-results="ctrl.noResults" class="form-control">
+							<i ng-show="ctrl.loadingIdentities"
+								class="glyphicon glyphicon-refresh"></i>
+							<div ng-show="ctrl.noResults">
+								<i class="glyphicon glyphicon-remove"></i> No Results Found
+							</div>
+						</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">Others informations</div>
+				<div class="panel-body">
+						<div class="form-group">
+							<label for="other">Business justification</label>
+							<textarea class="form-control" aria-label="With textarea" placeholder="Add a default comment that would added in the access request">
+							</textarea>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer bg-light lt">
+			<button tabindex="50" ng-click="ctrl.close()" type="button"
+				class="btn btn-default">Cancel</button>
+			<button tabindex="50" ng-click="ctrl.launch(selected)" type="button"
+				class="btn btn-primary" ng-disabled="selected == null">Request</button>
+		</div>
+	</div>

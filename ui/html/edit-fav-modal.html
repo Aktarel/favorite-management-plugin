@@ -1,0 +1,43 @@
+<div id="infoModal" role="dialog" aria-labelledby="modalTitle"
+	class="info-modal">
+	<div class="modal-header">
+		<h4 class="modal-title" id="modalTitle">Edit favorite</h4>
+	</div>
+	<div class="modal-body">
+		<div id="modal-content">
+			<div class="panel panel-default">
+
+				<div class="panel-heading">Properties</div>
+				<div class="panel-body">
+					
+					<div class="form-group">
+						<label for="delegatee">Filter Name</label>
+						<input type="text"  class="form-control" value="SSSC Business Analyst"  />
+					</div>
+					
+					<div class="form-group">
+						<label for="delegatee">Filter Description</label>
+						<textarea class="form-control" aria-label="With textarea">New joiner will have access to Sailpoint / Epassport and ControlSA as functional admin</textarea>
+					</div>
+					
+					<div class="form-group">
+						<label for="filterOwner">Filter Owner</label>
+						<input id="filterOwner" type="text"
+								ng-model="selected" typeahead-min-length="2"
+								typeahead-editable="false"
+								typeahead-input-formatter="ctrl.formatLabel($model)"
+								uib-typeahead="identity.name as identity.displayName  for identity in ctrl.getIdentities($viewValue)"
+								placeholder="Type 2 character to start search your delegatee"
+								typeahead-loading="ctrl.loadingIdentities"
+								typeahead-no-results="ctrl.noResults" class="form-control">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer bg-light lt">
+			<button tabindex="50" ng-click="ctrl.close()" type="button"
+				class="btn btn-default">Cancel</button>
+			<button tabindex="50" ng-click="ctrl.launch(selected)" type="button"
+				class="btn btn-primary" ng-disabled="selected == null">Update</button>
+		</div>
+	</div>

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+
+<!-- (c) Copyright 2016 SailPoint Technologies, Inc., All Rights Reserved. -->
+
+<sailpoint>
+
+  <ImportAction name="merge">
+    <Configuration name="SystemConfiguration">
+      <Attributes>
+        <Map>
+          <entry key='quickLinkCategories'>
+            <value>
+              <List>
+                <QuickLinkCategory name="TransferResponsabilities" messageKey="TransferResponsabilities" enabled="true" icon="quickLinkCategoryCustom" />
+                <QuickLinkCategory name="ResponsabilityCertification" messageKey="ResponsabilityCertification" enabled="true" icon="quickLinkCategoryCustom" />
+              </List>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </Configuration>
+  </ImportAction>
+
+  <QuickLink action="external" category="TransferResponsabilities" messageKey="Transfer Responsabilities" name="TransferResponsabilities" ordering="4">
+    <Attributes>
+      <Map>
+        <entry key="url" value="plugins/pluginPage.jsf?pn=TransferResponsabilities"/>
+      </Map>
+    </Attributes>
+    <QuickLinkOptions allowSelf="true">
+      <DynamicScopeRef>
+        <Reference class="sailpoint.object.DynamicScope" name="Everyone"/>
+      </DynamicScopeRef>
+    </QuickLinkOptions>
+  </QuickLink>
+<QuickLink action="external" category="ResponsabilityCertification" messageKey="Responsability Certification" name="ResponsabilityCertification" ordering="4">
+    <Attributes>
+      <Map>
+        <entry key="url" value="plugins/pluginPage.jsf?pn=ResponsabilityCertification"/>
+      </Map>
+    </Attributes>
+    <QuickLinkOptions allowSelf="true">
+      <DynamicScopeRef>
+        <Reference class="sailpoint.object.DynamicScope" name="Everyone"/>
+      </DynamicScopeRef>
+    </QuickLinkOptions>
+  </QuickLink>
+</sailpoint>
+

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+
+<sailpoint>
+
+  <ServiceDefinition name="RecertificationUpdateTask" executor="fr.nico.plugin.transferresp.server.RecertificationUpdateTask" interval="20" hosts="global">
+    <Description>
+      Recertification update task
+    </Description>
+    <Attributes>
+      <Map>
+        <entry key="pluginName" value="TransferResponsability" />
+      </Map>
+    </Attributes>
+  </ServiceDefinition>
+
+</sailpoint>
+

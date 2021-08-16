@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC
+  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<body>
+
+	<ui:composition>
+		<div class="panel panel-default" ng-app="FavoriteManagement"
+			ng-controller="FavoriteManagementController as ctrl">
+
+			<!-- Stack the columns on mobile by making one full-width and the other half-width -->
+			<div class="panel-heading">
+				<div class="row" style="margin-top: 10px">
+					<div class="col-xs-2 col-md-1 text-center">
+						<img class="img-responsive" alt="logo"
+							src="#{plugins.requestContextPath}/plugin/FavoriteManagement/ui/img/logo.png"></img>
+					</div>
+					<form class="form-horizontal">
+						<div class="form-group form-group-mg">
+							<div class="col-sm-8">
+								<div class="input-group">
+									<input class="form-control" type="text" id="query"
+										placeholder="input a filter name and hit search to display favorites list" />
+									<div class="input-group-btn">
+										<button type="button" class="btn btn-default dropdown-toggle"
+											data-toggle="dropdown" aria-haspopup="true"
+											aria-expanded="false">
+											Filter Name <span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu dropdown-menu-right">
+											<li><a href="#">By owner</a></li>
+											<li><a href="#">By tag</a></li>
+										</ul>
+										<a href="#searchFavorite">
+											<button type="button" class="btn btn-primary">Search</button>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-1">
+								<a href="#createFavorite">
+									<button type="button" class="btn btn-primary">Create
+										Favorite</button>
+								</a>
+							</div>
+							<!-- <div class="col-sm-2">
+								<div class="checkbox">
+									<label style="font-size: large;"><input
+										style="width: 20px; height: 20px;" type="checkbox" />&nbsp;Only
+										my filters </label>
+								</div>
+							</div> -->
+						</div>
+					</form>
+				</div>
+
+			</div>
+			<div class="view-animate-container">
+				<div class="view-animate" ng-view=""></div>
+			</div>
+		</div>
+
+		<script
+			src="#{plugins.requestContextPath}/plugin/FavoriteManagement/ui/js/lib/angular.min.js"></script>
+		<script
+			src="#{plugins.requestContextPath}/plugin/FavoriteManagement/ui/js/lib/ui-bootstrap.min.js"></script>
+		<script	src="#{plugins.requestContextPath}/plugin/FavoriteManagement/ui/js/FavoriteModule.js"></script>
+		<script
+			src="#{plugins.requestContextPath}/plugin/FavoriteManagement/ui/js/lib/angular-bootstrap-multiselect.min.js"></script>
+		<script
+			src="#{plugins.requestContextPath}/plugin/FavoriteManagement/ui/js/lib/angular-route.min.js"></script>
+		<script
+			src="#{plugins.requestContextPath}/plugin/FavoriteManagement/ui/js/lib/select.min.js"></script>
+		<script
+			src="#{plugins.requestContextPath}/plugin/FavoriteManagement/ui/js/lib/jquery.min.js"></script>
+ 
+	</ui:composition>
+
+</body>
+</html>
+

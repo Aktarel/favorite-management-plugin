@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC
+  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<body>
+
+	<ui:composition>
+		<div class="panel panel-default" ng-app="ResponsabilityTransfer"
+			ng-controller="ResponsabilityTransferController as ctrl">
+
+
+			<!-- Stack the columns on mobile by making one full-width and the other half-width -->
+			<div class="panel-heading">
+				<h3>Transfer your responsabilities</h3>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-10">
+						<p>
+							You can transfer the ownership definitively to another member
+							within the organisation. <br /> However, this new member need to
+							be aware about his new responsability. <br /> To fully complete
+							the ownershop transfer, your delegatee will receive a workitem to
+							approve his new responsability.
+						</p>
+					</div>
+					<div class="col-md-2">
+						<div class="dropup">
+							<button class="btn btn-default dropdown-toggle" type="button"
+								id="dropdownMenu" ng-disabled="ctrl.selection.length == 0" data-toggle="dropdown" aria-haspopup="true">
+								Actions <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a ng-click="ctrl.launchTransfer(selectResponsability)">Transfer</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<br />
+				<ul class="nav nav-pills">
+					  <li role="presentation" class="active"><a href="#">Entitlement Owner  <span class="badge">2</span></a></li>
+					  <li role="presentation"><a href="#">Application Owner <span class="badge">0</span></a></li>
+					  <li role="presentation"><a href="#">Exceptional Approver <span class="badge">0</span></a></li>
+					  <li role="presentation"><a href="#">Workgroup <span class="badge">0</span></a></li>
+					  <li role="presentation"><a href="#">Static Approval <span class="badge">0</span></a></li>
+			  	</ul>
+			</div>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th><input type="checkbox" id="selectAllResponsability"
+							name="allResponsability" value="allResponsability"/></th>
+						<th>Type</th>
+						<th>Responsability name</th>
+						<th>Description</th>
+						<th>Owner</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="responsability in ctrl.responsabilities"
+						ng-class="{ 'success' : responsability.complete }">
+						<th scope="row"><input type="checkbox"
+							name="selectResponsability"
+							value="selectResponsability" 
+							ng-model="selectResponsability" 
+							ng-checked="ctrl.selection.indexOf(responsability) > -1"
+    						ng-click="ctrl.toggleSelection(responsability)"
+							/>
+							</th>
+						<td>{{ responsability.type }}</td>
+						<td>{{ responsability.name }}</td>
+						<td>{{ responsability.description }}</td>
+						<td>{{ responsability.owner }}</td>
+						<td>Active</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<script
+			src="#{plugins.requestContextPath}/plugin/TransferResponsabilities/ui/js/angular.min.js"></script>
+		<script
+			src="#{plugins.requestContextPath}/plugin/TransferResponsabilities/ui/js/ui-bootstrap.min.js"></script>
+		<script
+			src="#{plugins.requestContextPath}/plugin/TransferResponsabilities/ui/js/ResponsabilityTransferModule.js"></script>
+
+	</ui:composition>
+
+</body>
+</html>
+

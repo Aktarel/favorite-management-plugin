@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Plugin PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Plugin certificationLevel="None" displayName="Transfer Responsabilities" minSystemVersion="7.1" name="TransferResponsabilities" version="0.2">
+  <Attributes>
+    <Map>
+      <entry key="minUpgradableVersion" value="1.0" />
+      <entry key="fullPage">
+        <value>
+          <FullPage title="Transfer Responsabilities" />
+        </value>
+      </entry>
+      <entry key="restResources">
+        <value>
+          <List>
+            <String>fr.nico.plugin.transferresp.rest.PageConfigResource</String>
+            <String>fr.nico.plugin.transferresp.rest.ResponsabilityResource</String>
+            <String>fr.nico.plugin.transferresp.rest.IdentityResource</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="snippets">
+        <value>
+          <List>
+            <Snippet regexPattern=".*" rightRequired="ViewTodoPluginIcon">
+              <Scripts>
+                <String>ui/js/snippets/header.js</String>
+              </Scripts>
+              <StyleSheets>
+                <String>ui/css/rtm.css</String>
+              </StyleSheets>
+            </Snippet>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</Plugin>
+

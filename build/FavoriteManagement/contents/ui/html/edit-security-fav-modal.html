@@ -1,0 +1,83 @@
+<div role="dialog" aria-labelledby="modalTitle" class="default-modal">
+	<div class="modal-header">
+		<h4 class="modal-title" id="modalTitle">Edit security</h4>
+	</div>
+	<div class="modal-body">
+		<div id="modal-content">
+			<div class="panel panel-default">
+
+				<!-- 				<div class="panel-heading">Filter information</div>
+				<div class="panel-body">
+
+					<div class="form-group">
+						<label for="delegatee">Filter Name</label> <input type="text"
+							class="form-control" value="SSSC Business Analyst" disabled />
+					</div>
+				</div> -->
+
+				<div class="panel-heading">Content</div>
+				<div class="panel-body">
+					<div class="form-group">
+						<label for="appProfile">Application Profile</label>
+						<ui-select multiple="" ng-model="ctrl.selection" theme="bootstrap">
+							<ui-select-match
+								placeholder="Select or search an app profile">{{$item.name}}</ui-select-match>
+							<ui-select-choices
+								repeat="item in ctrl.optionsBusinessrole">
+							<span ng-bind="item.name"></span>
+							
+							</ui-select-choices> 
+						</ui-select>
+							
+					</div>
+					<div class="form-group">
+						<label for="businessRole">Business role</label>
+						<ui-select ng-model="ctrl.selectionBr" theme="bootstrap">
+							<ui-select-match
+								placeholder="Select or search a business role">{{ctrl.selectionBr.name}}</ui-select-match>
+							<ui-select-choices
+								repeat="item in ctrl.optionsBusinessrole">
+							<span ng-bind="item.name"></span>
+							
+							</ui-select-choices> 
+						</ui-select>
+							
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">Security</div>
+				<div class="panel-body">
+
+					<div class="form-group">
+						<label for="delegatee">Scope</label> <select class="form-control">
+							<option>Private</option>
+							<option>Selected users</option>
+							<option>Selected poles</option>
+							<option>Public</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="usersAllowed">Users allowed</label>
+						<ui-select multiple="" ng-model="ctrl.selectionUsersAllowed" theme="bootstrap">
+							<ui-select-match
+								placeholder="Select or search a person in the list...">{{$item.name}}</ui-select-match>
+							<ui-select-choices
+								repeat="item in ctrl.optionsUsersAllowed">
+							<span ng-bind="item.name"></span>
+							
+							</ui-select-choices> 
+						</ui-select>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer bg-light lt">
+		<button tabindex="50" ng-click="ctrl.close()" type="button"
+			class="btn btn-default">Cancel</button>
+		<button tabindex="50" ng-click="ctrl.launch(selected)" type="button"
+			class="btn btn-primary" ng-disabled="selected == null">Update</button>
+	</div>
+</div>

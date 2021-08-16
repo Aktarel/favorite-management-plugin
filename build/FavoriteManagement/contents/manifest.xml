@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Plugin PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Plugin certificationLevel="None" displayName="Manage Favorites" minSystemVersion="7.1" name="FavoriteManagement" version="0.2">
+  <Attributes>
+    <Map>
+      <entry key="minUpgradableVersion" value="1.0" />
+      <entry key="fullPage">
+        <value>
+          <FullPage title="Manage my favorites" />
+        </value>
+      </entry>
+      <entry key="restResources">
+        <value>
+          <List>
+            <String>fr.nico.plugin.favorite.rest.PageConfigResource</String>
+            <String>fr.nico.plugin.favorite.rest.ResponsabilityResource</String>
+            <String>fr.nico.plugin.favorite.rest.IdentityResource</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="snippets">
+        <value>
+          <List>
+            <Snippet regexPattern=".*" >
+              <Scripts>
+                <String>ui/js/snippets/header.js</String>
+              </Scripts>
+              <StyleSheets>
+                <String>ui/css/fav.css</String>
+                <String>ui/css/select.min.css</String>
+              </StyleSheets>
+            </Snippet>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</Plugin>
+
